@@ -1,7 +1,13 @@
-export function WhiteLogo(){
-    return(
-        <svg width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48">  <image id="image0" width="48" height="48" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfwAAAH8CAQAAACeW9WYAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+export function WhiteLogo() {
+  return (
+    <svg x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <image
+        id="image0"
+        width="48"
+        height="48"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfwAAAH8CAQAAACeW9WYAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
 cwAACxMAAAsTAQCanBgAAGJNSURBVHja7Z13nB5V9f8/586dmadtzW42ZZNsQkJZOgshhYRFpYig
 iN9gxa9+xa8dFcUuPNj9Cj8VKxYsiCIBUUEURAghdJZOaIEkkGyy2c32Z/rM/f0xsym0bJ95du47
@@ -446,8 +452,8 @@ ySgWAwMjaAAc5ioqowBOxrV8BNGrSlKFDPXLGEEkQKAiihhK5rViDYumAahH5x4TAoOAHIyoVzAj
 LD9vlww48OQcP31I4U8laNefBGrFGgKFqwJg9eikXUt/ChgIATzY8BB6fYlEMkUgkCCwVQp469AW
 oGF1X64hjxwyUMFknC+RTFX2WhUoDpX5KkUmZMwnkaQMKXqJRCKRSCSSKcz/B9o734utReUWAAAA
 JXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTEwLTAyVDIzOjMyOjE2KzAwOjAwuer+bAAAACV0RVh0ZGF0
-ZTptb2RpZnkAMjAyMy0xMC0wMlQyMzozMjoxNiswMDowMMi3RtAAAAAASUVORK5CYII=" />
-</svg>
-
-    )
+ZTptb2RpZnkAMjAyMy0xMC0wMlQyMzozMjoxNiswMDowMMi3RtAAAAAASUVORK5CYII="
+      />
+    </svg>
+  );
 }

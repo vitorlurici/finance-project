@@ -1,7 +1,19 @@
-export function Logo(){
-    return(
-        <svg width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48">  <image id="image0" width="48" height="48" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+export function Logo() {
+  return (
+    <svg
+      width="48px"
+      height="48px"
+      viewBox="0 0 48 48"
+      enable-background="new 0 0 48 48"
+    >
+      {" "}
+      <image
+        id="image0"
+        width="48"
+        height="48"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAA
 CXBIWXMAAAsTAAALEwEAmpwYAACAAElEQVR42uydd4DsVPXHv/cmmba9vt57Lzx6ER4gSFMURRAV
 RbDrzy6oYAHsgiI2moAICqg0RTpI7/X13sv2nZ7knt8fM7s7MzslM7tvM7t7Pjq8uUnm5uQmm+89
@@ -703,8 +715,8 @@ l9hxldtD2b6qO36WADSpqorv+xXfddfBoBPtql3vK4NOFDg7oy/wZAWAiHZR4INOREREz5/c6w9A
 REREz45BJyIiCgAGnYiIKAAYdCIiogBg0ImIiAKAQSciIgoABp2IiCgAGHQiIqIAYNCJiIgCgEEn
 IiIKAAadiIgoABh0IiKiAPgSS8DxGwKTszMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMTAtMDJU
 MjM6MzI6MTArMDA6MDDaOstWAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTEwLTAyVDIzOjMyOjEw
-KzAwOjAwq2dz6gAAAABJRU5ErkJggg==" />
-</svg>
-
-    )
+KzAwOjAwq2dz6gAAAABJRU5ErkJggg=="
+      />
+    </svg>
+  );
 }

@@ -1,7 +1,19 @@
-export function BlurLogo(){
-    return(
-        <svg width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48">  <image id="image0" width="48" height="48" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+export function BlurLogo() {
+  return (
+    <svg
+      width="48px"
+      height="48px"
+      viewBox="0 0 48 48"
+      enable-background="new 0 0 48 48"
+    >
+      {" "}
+      <image
+        id="image0"
+        width="48"
+        height="48"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAA
 CXBIWXMAAAsTAAALEwEAmpwYAACAAElEQVR42uydd5zjxNnHf6Pivr3d7e61vd64447e21FDhwAB
 EiCEAKGEkJBGQiAQAgRCC+kkBNIrvCQQAgQIvcP13svu3fZ1lzTvH7ZsWVa1veu99Xw/p7NGkkej
@@ -898,7 +910,8 @@ iXJ2M94BoEAh0KFQZVO124W7+dFueZhbsGcbyl6+P9dxdLtQF1Xp1koe4+gAPoFABz+YT7hnU8Eb
 8BEEOviZl3AXnfzm1Jq3u8+mdZ/N15LDc9bX4iXUrR+dKnQAKEAIdCgWfFjNp3o3P+ZS0ef6nOj3
 4f/8ovFww+XCGDqATyDQoVjNp3q3fo9T2GYb+tncO70mPtD5YLdbgy56DwCgQPw/uZH6AUZ6jMEA
 AAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMTAtMDNUMDE6MzI6MDYrMDI6MDDwE9YOAAAAJXRFWHRk
-YXRlOm1vZGlmeQAyMDIzLTEwLTAzVDAxOjMyOjA2KzAyOjAwgU5usgAAAABJRU5ErkJggg==" />
-</svg>
-    )
+YXRlOm1vZGlmeQAyMDIzLTEwLTAzVDAxOjMyOjA2KzAyOjAwgU5usgAAAABJRU5ErkJggg=="
+      />
+    </svg>
+  );
 }

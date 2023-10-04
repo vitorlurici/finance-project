@@ -1,7 +1,10 @@
-import './App.scss'
-import { BlurLogo,} from './components/img/blur-logo'
-import { LoginIcon } from './components/img/login-icon'
-import { PersonSmartphone } from './components/img/person-smartphone'
+import "./App.scss";
+import { BlurLogo } from "./components/img/blur-logo";
+import { FlagIcon } from "./components/img/flag-icon";
+import { GraphicIcon } from "./components/img/graphic-icon";
+import { LoginIcon } from "./components/img/login-icon";
+import { PersonSmartphone } from "./components/img/person-smartphone";
+import { WhiteLogo } from "./components/img/white-logo";
 
 function App() {
   return (
@@ -9,55 +12,74 @@ function App() {
       <header className="header">
         <header className="header-container">
           <div className="logo-container">
-            <BlurLogo/>
+            <BlurLogo />
             <span>finance</span>
           </div>
           <button>
-          <LoginIcon/>
-          <span>Acessar sua conta</span>
+            <LoginIcon />
+            <span>Acessar sua conta</span>
           </button>
         </header>
       </header>
       <div className="content-container">
         <div className="left-content">
-        <h2>Controle de suas finanças na palma da mão</h2>
-        <h4>A Finance fornece uma maneira simples de 
-        cuidar do seu dinheiro de forma gratuita.</h4>
-        <button>Inscreva-se</button>
+          <h2>Controle de suas finanças na palma da mão</h2>
+          <h4>
+            A Finance fornece uma maneira simples de cuidar do seu dinheiro de
+            forma gratuita.
+          </h4>
+          <button>Inscreva-se</button>
         </div>
         <div className="right-content">
-          <div className="emoji money">
-          💸
-          </div>
-          <div className="emoji fire">
-          🔥
-          </div>
-          <PersonSmartphone/>
-          <div className="emoji face">
-          🤑
-          </div>
-          <div className="emoji rocket">
-          🚀
-          </div>
+          <div className="emoji money">💸</div>
+          <div className="emoji fire">🔥</div>
+          <PersonSmartphone />
+          <div className="emoji face">🤑</div>
+          <div className="emoji rocket">🚀</div>
         </div>
       </div>
 
       <div className="info-container">
-        <div className="left-content">
-
-        </div>
+        <div className="left-content"></div>
         <div className="right-content">
-          <h2>Não perca tempo</h2>
-          <h1>Conheça nosso Gerenciador Financeiro</h1>
+          <div>
+            <h2>Não perca tempo</h2>
+            <h1>Conheça nosso Gerenciador Financeiro</h1>
+          </div>
+          <div className="items-content">
+            <GraphicIcon />
+            <div>
+              <h3>Monte um Planejamento</h3>
+              <br />
+              <h4>
+                Acompanhe e faça orçamentos mensais para manter seus gastos sob
+                controle.
+              </h4>
+            </div>
+          </div>
+          <hr />
+          <div className="items-content">
+            <FlagIcon />
+            <div>
+              <h3>Defina objetivos</h3>
+              <br />
+              <h4>
+                Determine metas para alcançar seus sonhos. Crie objetivos no app
+                e realize o que deseja
+              </h4>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="bottom-container">
-
+        <div className="logo-container">
+          <WhiteLogo />
+          <span>finance</span>
+        </div>
       </div>
-
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
