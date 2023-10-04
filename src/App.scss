@@ -3,16 +3,34 @@
 #root {
   margin: 0 auto;
   padding: 0;
-}
-
-@keyframes appear {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
   }
   
+  h2 {
+    font-size: 44px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+@keyframes balance {
+  0% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
 }
 
 main {
@@ -77,7 +95,6 @@ main {
     justify-content: center;
     position: relative;
     height: 424px;
-    gap: 12px;
     align-self: stretch;
 
     .left-content {
@@ -88,15 +105,6 @@ main {
       justify-content: center;
       align-items: center;
       gap: 24px;
-
-      .h1 {
-        font-size: 48px;
-        font-weight: 600;
-      }
-      .h2 {
-        font-size: 16px;
-        font-weight: 400;
-      }
       
       button {
         display: flex;
@@ -105,7 +113,7 @@ main {
         align-items: center;
         gap: 12px;
         border-radius: 48px;
-        background: $color-brighter;
+        background: white;
         color: $color-secundary;
         font-size: 20px;
         font-weight: 700;
@@ -119,10 +127,79 @@ main {
       display: flex;
       width: 640px;
       padding: 0px 108px;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 24px;
+
+      .emoji {
+        background: rgba(51, 78, 92, 0.5);
+        padding: 12px;
+        border-radius: 100%;
+        position: absolute;
+
+        &.money {
+          left: 55%;
+          top: 20%;
+          transform: rotate(-20deg);
+          font-size: 48px;
+          animation: balance 1200ms alternate 600ms infinite;
+        }
+
+        &.fire {
+          left: 52%;
+          bottom: 22%;
+          transform: rotate(-15deg);
+          font-size: 20px;
+        }
+
+        &.face {
+          right: 20%;
+          bottom: 25%;
+          transform: rotate(20deg);
+          font-size: 28px;
+        }
+
+        &.rocket {
+          right: 22%;
+          top: 30%;
+          transform: rotate(-22deg);
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .info-container {
+    display: flex;
+    padding: 24px 0px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 1280px;
+
+    .left-content {
+      display:flex;
+      width: 572px;
+      padding: 0px 0px 0px 108px;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .right-content {
+      display: flex;
+      width: 708px;
+      padding: 0px 108px 0px 0px;
+      flex-direction: column;
+      justify-content: right;
+      align-items: flex-start;
+      gap: 20px;
+
+      h1 {
+        color: $color-secundary;
+      }
+      h2 {
+        color: rgba(52, 186, 171, 0.60);
+      }
     }
   }
 }
