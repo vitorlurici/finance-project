@@ -3,6 +3,8 @@ import { BlurLogo } from "./components/img/blur-logo";
 import { FlagIcon } from "./components/img/flag-icon";
 import { GraphicIcon } from "./components/img/graphic-icon";
 import { LoginIcon } from "./components/img/login-icon";
+import { Man } from "./components/img/man";
+import { MoneyHand } from "./components/img/money-hand";
 import { PersonSmartphone } from "./components/img/person-smartphone";
 import { WhiteLogo } from "./components/img/white-logo";
 
@@ -67,6 +69,7 @@ function App() {
                 Determine metas para alcançar seus sonhos. Crie objetivos no app
                 e realize o que deseja
               </h4>
+              <MoneyHand />
             </div>
           </div>
         </div>
@@ -77,6 +80,22 @@ function App() {
           <WhiteLogo />
           <span>finance</span>
         </div>
+        <hr />
+        <div className="bottom-content">
+          <div className="bottom">
+            <h2>Ajuda</h2>
+            <h4>Duvidas Gerais</h4>
+            <h4>Fale conosco</h4>
+          </div>
+          <div className="bottom">
+            <h2>Institucional</h2>
+            <h4>Home</h4>
+            <h4>Sobre nós</h4>
+            <h4>Termos e Privacidade</h4>
+          </div>
+        </div>
+        <hr />
+        <div className="last-content"></div>© 2023 Finance
       </div>
     </main>
   );
