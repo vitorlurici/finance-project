@@ -94,8 +94,7 @@ function App() {
             <h4>Termos e Privacidade</h4>
           </div>
         </div>
-        <hr />
-        <div className="last-content">© 2023 Finance</div>
+        <hr />© 2023 Finance
       </div>
     </main>
   );

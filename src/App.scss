@@ -42,14 +42,15 @@ main {
 
   .header {
     background-color: $color-darker;
-    width: 100%;
+    width: 1280px;
+    justify-content: center;
     padding: 0px 108px;
 
     .header-container {
       height: 100px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       button {
         font-weight: 500;
@@ -214,12 +215,12 @@ main {
   }
   .bottom-container {
     background-color: $color-darker;
-    width: 100%;
+    width: 1280px;
     padding: 40px 108px;
     gap: 36px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 
     hr {
       width: 100%;
@@ -234,15 +235,14 @@ main {
       font-size: 36px;
       font-weight: 700;
       cursor: pointer;
-      width: 1060px;
       display: flex;
+      align-self: start;
     }
 
     .bottom-content {
       display: flex;
       gap: 200px;
-      width: 1280px;
-      padding-left: 108px;
+      align-self: start;
 
       h2 {
         font-size: 16px;
@@ -260,25 +260,108 @@ main {
         gap: 20px;
       }
     }
-    .last-content {
-      display: flex;
-    }
   }
 }
 
 //responsividade
-@media (max-width: 700px) {
+@media (max-width: 1279px) {
+  main {
+    display: flex;
+
+    .header {
+      padding: 0px 60px;
+      width: 100%;
+    }
+
+    .content-container {
+      padding: 24px 0px;
+      gap: 20px;
+
+      .left-content {
+        display: flex;
+        width: 100%;
+        padding: 0px 60px;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .right-content {
+        width: 100%;
+        padding: 0px 60px;
+
+        .emoji {
+          &.money {
+            left: 12%;
+            top: 10%;
+          }
+
+          &.fire {
+            left: 5%;
+            bottom: 15%;
+          }
+
+          &.face {
+            right: 8%;
+            bottom: 24%;
+          }
+
+          &.rocket {
+            right: 16%;
+            top: 16%;
+          }
+        }
+      }
+    }
+
+    .info-container {
+      .left-content {
+        width: 100%;
+        padding: 0px 60px;
+      }
+
+      .right-content {
+        width: 100%;
+        padding: 0px 60px;
+
+        .items-content {
+          gap: 16px;
+          align-self: start;
+        }
+      }
+    }
+
+    .bottom-container {
+      width: 100%;
+      padding: 20px 60px;
+      gap: 12px;
+
+      hr {
+        width: 100%;
+      }
+
+      .bottom-content {
+        display: flex;
+        gap: 100px;
+
+        .bottom {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
   main {
     display: flex;
 
     .header {
       padding: 0px 20px;
-      .header-container {
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      width: 100%;
 
+      .header-container {
         button {
           font-size: 0px;
           border-radius: 28px;
@@ -316,38 +399,24 @@ main {
         padding: 0px 24px;
 
         .emoji {
-          background: rgba(51, 78, 92, 0.5);
-          padding: 12px;
-          border-radius: 100%;
-          position: absolute;
-
           &.money {
-            left: 8%;
+            left: 22%;
             top: 10%;
-            transform: rotate(-20deg);
-            font-size: 48px;
-            animation: balance 1200ms alternate 600ms infinite;
           }
 
           &.fire {
-            left: 5%;
+            left: 15%;
             bottom: 25%;
-            transform: rotate(-15deg);
-            font-size: 20px;
           }
 
           &.face {
-            right: 5%;
+            right: 15%;
             bottom: 33%;
-            transform: rotate(20deg);
-            font-size: 28px;
           }
 
           &.rocket {
-            right: 12%;
+            right: 26%;
             top: 20%;
-            transform: rotate(-22deg);
-            font-size: 16px;
           }
         }
       }
@@ -383,6 +452,7 @@ main {
 
         .items-content {
           gap: 16px;
+          align-self: start;
         }
       }
     }
@@ -394,20 +464,10 @@ main {
 
       hr {
         width: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        border: none;
-        height: 1px;
-        width: 100%;
-      }
-
-      .logo-container {
-        width: 100%;
       }
 
       .bottom-content {
         display: flex;
-        gap: 20px;
-        width: 100%;
         padding-left: 0px;
 
         h2 {
@@ -416,8 +476,6 @@ main {
 
         h4 {
           font-size: 12px;
-          color: rgba(255, 255, 255, 0.5);
-          cursor: pointer;
         }
 
         .bottom {
@@ -426,8 +484,35 @@ main {
           gap: 20px;
         }
       }
-      .last-content {
-        display: flex;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    .content-container {
+      .right-content {
+        .emoji {
+          &.money {
+            left: 8%;
+            top: 10%;
+          }
+
+          &.fire {
+            left: 5%;
+            bottom: 25%;
+          }
+
+          &.face {
+            right: 5%;
+            bottom: 33%;
+          }
+
+          &.rocket {
+            right: 12%;
+            top: 20%;
+          }
+        }
       }
     }
   }
