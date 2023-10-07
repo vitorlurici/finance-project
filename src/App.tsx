@@ -3,7 +3,6 @@ import { BlurLogo } from "./components/img/blur-logo";
 import { FlagIcon } from "./components/img/flag-icon";
 import { GraphicIcon } from "./components/img/graphic-icon";
 import { LoginIcon } from "./components/img/login-icon";
-import { Man } from "./components/img/man";
 import { MoneyHand } from "./components/img/money-hand";
 import { PersonSmartphone } from "./components/img/person-smartphone";
 import { WhiteLogo } from "./components/img/white-logo";
@@ -42,7 +41,9 @@ function App() {
       </div>
 
       <div className="info-container">
-        <div className="left-content"></div>
+        <div className="left-content">
+          <MoneyHand />
+        </div>
         <div className="right-content">
           <div>
             <h2>Não perca tempo</h2>
@@ -69,7 +70,6 @@ function App() {
                 Determine metas para alcançar seus sonhos. Crie objetivos no app
                 e realize o que deseja
               </h4>
-              <MoneyHand />
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ function App() {
           </div>
         </div>
         <hr />
-        <div className="last-content"></div>© 2023 Finance
+        <div className="last-content">© 2023 Finance</div>
       </div>
     </main>
   );
