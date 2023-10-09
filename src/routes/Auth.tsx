@@ -1,5 +1,11 @@
+import TopBarAuth from "../components/TopBarAuth";
+import "./styles/Auth.scss";
 const Auth = () => {
-  return <div>Auth</div>;
+  return (
+    <main className="Auth">
+      <TopBarAuth />
+    </main>
+  );
 };
 
 export default Auth;

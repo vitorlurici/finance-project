@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <main>
+    <main className="general">
       <TopBar />
       <Outlet />
       <BottomBar />
