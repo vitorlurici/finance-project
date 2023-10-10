@@ -34,10 +34,6 @@
       justify-content: space-between;
 
       button {
-        a {
-          display: flex;
-          align-items: center;
-        }
         font-weight: 500;
         font-size: 16px;
         border: none;
@@ -45,9 +41,14 @@
         cursor: pointer;
         color: $color-secundary;
         background: white;
-        gap: 12px;
         padding: 8px 16px;
         font-family: "Montserrat", sans-serif;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
       }
     }
 
@@ -247,7 +248,7 @@
 
 //responsividade
 @media (max-width: 1279px) {
-  main {
+  .general {
     display: flex;
 
     .header {
@@ -336,7 +337,7 @@
 }
 
 @media (max-width: 950px) {
-  main {
+  .general {
     display: flex;
 
     .header {
@@ -349,6 +350,9 @@
           border-radius: 28px;
           color: $color-secundary;
           gap: 0px;
+          a {
+            gap: 0px;
+          }
         }
       }
 
@@ -471,7 +475,7 @@
 }
 
 @media (max-width: 600px) {
-  main {
+  .general {
     .content-container {
       .right-content {
         .emoji {

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Logo } from "./img/Logo";
+import { BlurLogo } from "./img/BlurLogo";
 
 const TopBarAuth = () => {
   return (
     <header className="top-bar">
       <div className="logo-auth">
         <Link to="/">
-          <Logo />
+          <BlurLogo />
           <span>finance</span>
         </Link>
       </div>
