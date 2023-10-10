@@ -10,7 +10,6 @@ const Auth = () => {
   return (
     <main className="Auth">
       <TopBarAuth />
-
       <div className="content">
         <div className="left-content">
           <div className="top-login"></div>
