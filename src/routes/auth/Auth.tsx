@@ -1,7 +1,7 @@
 // import { useState } from "react";
-import TopBarAuth from "../components/TopBarAuth";
-import { AuthPerson } from "../components/img/AuthPerson";
-import "./styles/Auth.scss";
+import TopBarAuth from "../../components/TopBarAuth";
+import { AuthPerson } from "../../components/img/AuthPerson";
+import "./Auth.scss";
 const Auth = () => {
   // const [email, setEmail] = useState("");
   // const [nome, setNome] = useState("");

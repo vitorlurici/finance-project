@@ -4,14 +4,14 @@ import App from "./App.tsx";
 import "./styles/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/Home.tsx";
-import Dashboard from "./routes/Dashboard.tsx";
-import Auth from "./routes/Auth.tsx";
-import ErrorPage from "./routes/ErrorPage.tsx";
-import Contact from "./routes/Contact.tsx";
-import Question from "./routes/Question.tsx";
-import AboutUs from "./routes/AboutUs.tsx";
-import TermsPrivacity from "./routes/TermsPrivacity.tsx";
 import TitleUpdater from "./components/TitleUpdater.tsx";
+import Contact from "./routes/children/Contact.tsx";
+import Question from "./routes/children/Question.tsx";
+import AboutUs from "./routes/children/AboutUs.tsx";
+import TermsPrivacity from "./routes/children/TermsPrivacity.tsx";
+import ErrorPage from "./routes/children/ErrorPage.tsx";
+import Auth from "./routes/auth/Auth.tsx";
+import Dashboard from "./routes/dashboard/Dashboard.tsx";
 const router = createBrowserRouter([
   {
     path: "/",

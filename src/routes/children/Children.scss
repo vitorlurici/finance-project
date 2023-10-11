@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.children-main {
+  background-color: white;
+  color: $color-secundary;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    background-color: $color-brighter;
+    width: 100%;
+  }
+
+  span {
+    color: $color-darker;
+    max-width: 1080px;
+    padding: 36px 108px;
+    display: flex;
+    gap: 20px;
+
+    h4 {
+      color: black;
+    }
+  }
+  .erro {
+    max-width: 400px;
+  }
+}
