@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const LoginRegisterButtonSwap: React.FC = () => {
-  const location = useLocation();
-  const [activeButton, setActiveButton] = useState<number | null>(null);
+interface LoginRegisterButtonProps {
+  activeButton: number | null;
+  setActiveButton: React.Dispatch<React.SetStateAction<number | null>>;
+}
 
-  const handleButtonClick = (buttonNumber: number) => {
-    setActiveButton(buttonNumber);
-  };
+const LoginRegisterButtonSwap: React.FC<LoginRegisterButtonProps> = ({
+  activeButton,
+  setActiveButton,
+}) => {
+  const location = useLocation();
 
   useEffect(() => {
     const setActiveButtonBasedOnURL = () => {
@@ -24,14 +27,14 @@ const LoginRegisterButtonSwap: React.FC = () => {
   return (
     <div className="top-login">
       <button
-        className={`custom-button ${activeButton === 1 ? "active-button" : ""}`}
-        onClick={() => handleButtonClick(1)}
+        className={`${activeButton === 1 ? "active-button" : ""}`}
+        onClick={() => setActiveButton(1)}
       >
         ENTRAR
       </button>
       <button
-        className={`custom-button ${activeButton === 2 ? "active-button" : ""}`}
-        onClick={() => handleButtonClick(2)}
+        className={`${activeButton === 2 ? "active-button" : ""}`}
+        onClick={() => setActiveButton(2)}
       >
         CADASTRAR
       </button>

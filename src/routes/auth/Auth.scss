@@ -26,16 +26,18 @@
   .content {
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    gap: 108px;
+
     .left-content {
       display: flex;
       flex-direction: column;
-      width: 640px;
-      padding: 0px 108px;
+      width: 424px;
       justify-content: center;
       gap: 24px;
       color: $color-semi-secundary;
+      overflow: hidden;
 
       .top-login {
         display: flex;
@@ -52,10 +54,12 @@
           width: 100%;
           color: $color-semi-secundary;
           cursor: pointer;
+          transition: 1s;
         }
         .active-button {
           border-bottom: 1px solid $color-primary;
           color: $color-secundary;
+          transition: 1;
         }
       }
 
@@ -63,6 +67,9 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+        transition: transform 1s ease;
+        height: 452px;
+        position: relative;
 
         .float-label {
           position: relative;
@@ -164,6 +171,19 @@
 
           &:hover {
             background-color: $color-darker;
+          }
+        }
+        &.hidden {
+          display: flex;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+
+          &.login {
+            transform: translateX(212px);
+          }
+          &.register {
+            transform: translateX(-212px);
           }
         }
       }
