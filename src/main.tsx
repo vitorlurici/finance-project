@@ -75,11 +75,21 @@ const router = createBrowserRouter([
   },
   {
     path: "auth",
-    element: <Auth />,
+    element: (
+      <>
+        <TitleUpdater title="Finance" />
+        <Auth />
+      </>
+    ),
   },
   {
     path: "auth/login",
-    element: <Auth />,
+    element: (
+      <>
+        <TitleUpdater title="Finance" />
+        <Auth />
+      </>
+    ),
   },
   {
     path: "dashboard",

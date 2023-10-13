@@ -1,8 +1,8 @@
 export function AuthPerson() {
   return (
     <svg
-      width="512px"
-      height="512px"
+      width="360px"
+      height="360px"
       viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -49,6 +49,9 @@
           align-items: center;
           gap: 12px;
         }
+        &:hover {
+          background: $color-button-white;
+        }
       }
     }
 
@@ -98,6 +101,10 @@
         font-family: "Montserrat", sans-serif;
         cursor: pointer;
         border: none;
+
+        &:hover {
+          background: $color-button-white;
+        }
       }
     }
 

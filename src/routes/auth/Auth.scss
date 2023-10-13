@@ -3,16 +3,16 @@
 .auth {
   min-height: 100vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
 
   .top-bar {
-    width: 1280px;
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: start;
     padding-left: 108px;
+    position: absolute;
+    top: 0%;
 
     .logo-auth {
       gap: 12px;
@@ -28,7 +28,6 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-
     .left-content {
       display: flex;
       flex-direction: column;
@@ -38,90 +37,152 @@
       gap: 24px;
       color: $color-semi-secundary;
 
-      .float-label {
-        position: relative;
-        padding-top: 16px;
-        input {
-          display: flex;
-          min-width: 180px;
-          width: 452px;
-          padding: 8px 0px;
-          color: $color-secundary;
-          font-family: "Montserrat", sans-serif;
-          font-weight: 500;
-          font-size: 16px;
+      .top-login {
+        display: flex;
+        justify-content: center;
+
+        button {
           border: none;
-          border-bottom: 1px solid $color-semi-secundary;
-          transition: all 0.3s ease-out;
-          -webkit-transition: all 0.3s ease-out;
-          -moz-transition: all 0.3s ease-out;
-
-          &:focus {
-            border-bottom: 1px solid $color-primary;
-            outline: none;
-          }
-          &::placeholder {
-            color: transparent;
-          }
-
-          &:focus + label,
-          &:not(:placeholder-shown) + label {
-            margin-top: 0px;
-            font-size: 12px;
-            color: $color-primary;
-          }
+          padding: 10px 35px;
+          border-radius: 0px;
+          background: $color-white;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-weight: 600;
+          width: 100%;
+          color: $color-semi-secundary;
+          cursor: pointer;
         }
-        label {
-          pointer-events: none;
-          position: absolute;
-          font-weight: 500;
-          top: 0;
-          left: 0;
-          margin-top: 28px;
-          transition: all 0.3s ease-out;
-          -webkit-transition: all 0.3s ease-out;
-          -moz-transition: all 0.3s ease-out;
+        .active-button {
+          border-bottom: 1px solid $color-primary;
+          color: $color-secundary;
         }
       }
 
-      .conected {
-        gap: 8px;
+      .form {
         display: flex;
+        flex-direction: column;
+        gap: 24px;
 
-        input {
-          width: 1.3em;
-          height: 1.3em;
-          border-radius: 50%;
-          border: 2px solid #ddd;
-          appearance: none;
-          -webkit-appearance: none;
-          outline: none;
+        .float-label {
+          position: relative;
+          padding-top: 16px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          input {
+            display: flex;
+            min-width: 180px;
+            width: 452px;
+            padding: 8px 0px;
+            padding-right: 20px;
+            color: $color-secundary;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+            transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            border-bottom: 1px solid $color-semi-secundary;
+
+            &:focus {
+              border-bottom: 1px solid $color-primary;
+              outline: none;
+            }
+            &::placeholder {
+              color: transparent;
+            }
+
+            &:focus + label,
+            &:not(:placeholder-shown) + label {
+              margin-top: 0px;
+              font-size: 12px;
+              color: $color-primary;
+            }
+          }
+          label {
+            pointer-events: none;
+            position: absolute;
+            font-weight: 500;
+            top: 0;
+            left: 0;
+            margin-top: 28px;
+            transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+          }
+
+          .password-eye {
+            display: flex;
+            position: absolute;
+            right: 0%;
+            color: $color-semi-secundary;
+            cursor: pointer;
+          }
+        }
+
+        .conected {
+          gap: 8px;
+          display: flex;
+
+          input {
+            width: 1.3em;
+            height: 1.3em;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+
+            &:checked {
+              background-color: $color-primary;
+            }
+          }
+        }
+        a {
+          color: $color-primary;
+          text-align: center;
+        }
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+        button {
+          width: 100%;
+          border: none;
+          padding: 10px 35px;
+          border-radius: 48px;
+          background: #34baab;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-weight: 400;
+          color: $color-white;
           cursor: pointer;
 
-          &:checked {
-            background-color: $color-semi-secundary;
+          &:hover {
+            background-color: $color-darker;
           }
         }
-      }
-      span {
-        font-size: 12px;
-        text-align: center;
-      }
-      button {
-        width: 100%;
-        border: none;
-        padding: 10px 35px;
-        border-radius: 48px;
-        background: #34baab;
-        font-family: Montserrat;
-        font-size: 16px;
-        font-weight: 400;
-        color: $color-white;
       }
     }
 
     .right-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 108px;
+      color: $color-semi-secundary;
+      text-align: center;
       width: 640px;
+
+      h2 {
+        color: $color-secundary;
+        line-height: 1;
+        font-size: 28px;
+      }
     }
   }
 }
