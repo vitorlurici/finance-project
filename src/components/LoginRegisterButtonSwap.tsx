@@ -27,16 +27,18 @@ const LoginRegisterButtonSwap: React.FC<LoginRegisterButtonProps> = ({
   return (
     <div className="top-login">
       <button
-        className={`${activeButton === 1 ? "active-button" : ""}`}
+        className={`${activeButton === 1 ? "active-button login" : ""}`}
         onClick={() => setActiveButton(1)}
       >
         ENTRAR
+        <span />
       </button>
       <button
-        className={`${activeButton === 2 ? "active-button" : ""}`}
+        className={`${activeButton === 2 ? "active-button register" : ""}`}
         onClick={() => setActiveButton(2)}
       >
         CADASTRAR
+        <span />
       </button>
     </div>
   );
