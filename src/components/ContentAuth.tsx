@@ -1,22 +1,42 @@
 import { useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler, Resolver } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { date, object, string } from "yup";
+
+const schema = object({
+  name: string().required("Nome obrigatório").min(3, "Mínimo 3 caracteres"),
+  email: string()
+    .required("E-mail obrigatório")
+    .email("Digite no formato 'exemplo@email.com'"),
+  password: string()
+    .required("Senha obrigatório")
+    .min(6, "Mínimo 6 caracteres"),
+  createdOn: date().default(() => new Date()),
+});
 
 const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
   const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
+  // const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = handleSubmit((data) => console.log(data));
+
   const [show, setShow] = useState(false);
 
   //resetar os dados do usuário ao trocar de form entrar/cadastrar
-  useEffect(() => {
-    setNome("");
-    setEmail("");
-    setSenha("");
-  }, [activeButton]);
+  // useEffect(() => {
+  //   setNome("");
+  //   setEmail("");
+  //   setSenha("");
+  // }, [activeButton]);
 
   const showPassword = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -27,31 +47,23 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
       <div className="all-forms">
         <form
           className={` ${activeButton === 2 ? "register" : "hidden register"}`}
+          onSubmit={onSubmit}
         >
           <div className="float-label">
-            <input
-              type="text"
-              placeholder=""
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
+            <input type="text" placeholder="" {...register("name")} />
             <label>Nome</label>
+            <span className="error">{errors?.name?.message}</span>
           </div>
           <div className="float-label">
-            <input
-              type="email"
-              placeholder=""
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input type="email" placeholder="" {...register("email")} />
             <label>E-mail</label>
+            <span className="error">{errors?.email?.message}</span>
           </div>
           <div className="float-label">
             <input
               type={show ? "text" : "password"}
               placeholder=""
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
+              {...register("password")}
             />
             <label>Senha</label>
             <div className="password-eye">
@@ -61,6 +73,7 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
                 <FiEyeOff onClick={showPassword} />
               )}
             </div>
+            <span className="error">{errors?.password?.message}</span>
           </div>
 
           <div className="conected">
@@ -75,7 +88,9 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
             </Link>
             da Finance.
           </span>
-          <button type="submit">CONCORDAR E CADASTRAR</button>
+          <Link to="/dashboard">
+            <button type="submit">CONCORDAR E CADASTRAR</button>
+          </Link>
         </form>
         <form className={`${activeButton === 1 ? "login" : "hidden login"}`}>
           <div className="float-label">
@@ -107,7 +122,9 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
             <input type="checkbox"></input>
             <h4>Manter-me conectado</h4>
           </div>
-          <button type="submit">ENTRAR</button>
+          <Link to="/dashboard">
+            <button type="submit">ENTRAR</button>
+          </Link>
           <Link to="/forgot-password">Esqueceu sua senha?</Link>
           <span>
             Ao continuar, estou de acordo com os

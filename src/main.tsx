@@ -12,6 +12,21 @@ import TermsPrivacity from "./routes/children/TermsPrivacity.tsx";
 import ErrorPage from "./routes/children/ErrorPage.tsx";
 import Auth from "./routes/auth/Auth.tsx";
 import Dashboard from "./routes/dashboard/Dashboard.tsx";
+
+const Private: React.FC<{ Item: React.ComponentType; title: string }> = ({
+  Item,
+  title,
+}) => {
+  const signed: boolean = true;
+  const setTitle = signed ? title : "Finance";
+  return (
+    <>
+      <TitleUpdater title={setTitle} />
+      {signed ? <Item /> : <Auth />}
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -95,8 +110,7 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: (
       <>
-        <TitleUpdater title="Dashboard - Finance" />
-        <Dashboard />
+        <Private Item={Dashboard} title="Dashboard - Finance" />
       </>
     ),
   },
