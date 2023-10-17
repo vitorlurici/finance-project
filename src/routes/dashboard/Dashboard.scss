@@ -10,21 +10,32 @@
   padding: 0px 108px;
   gap: 40px;
 
+  button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: $color-secundary;
+    border: none;
+    display: flex;
+    align-items: center;
+    background: $color-white;
+    font-weight: 500;
+  }
+
   .top-bar {
     height: 100px;
     width: 1280px;
     display: flex;
-    padding-right: 108px;
     align-items: center;
     justify-content: flex-end;
-    gap: 24px;
+
+    .btn-user-config {
+      gap: 24px;
+      background: transparent;
+      cursor: pointer;
+    }
   }
 
   .btn-month {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    color: $color-secundary;
-    display: flex;
     padding: 8px 28px;
     gap: 20px;
     border-radius: 48px;
@@ -33,24 +44,103 @@
     cursor: pointer;
   }
 
-  .content {
-    display: flex;
+  .container {
+    display: grid;
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
     width: 1280px;
 
-    .btn-add {
+    .info-content {
       display: flex;
-      height: 80px;
-      padding: 10px 24px;
       align-items: center;
-      gap: 20px;
-      border-radius: 28px;
-      background: $color-white;
-      border: none;
-      box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
-      cursor: pointer;
+      justify-content: space-between;
+      gap: 12px;
+
+      .btn-add {
+        height: 100px;
+        padding: 10px 24px;
+        border-radius: 28px;
+        box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
+        cursor: pointer;
+        justify-content: space-between;
+        background-color: $color-primary;
+        width: 200px;
+      }
+
+      .btn {
+        height: 100px;
+        box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
+        justify-content: space-between;
+        padding: 10px 24px;
+        border-radius: 28px;
+        width: 340px;
+
+        .info-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+
+          .name {
+            color: $color-semi-secundary;
+            font-weight: 500;
+          }
+
+          .amount {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      h3 {
+        color: $color-semi-secundary;
+      }
+
+      a {
+        color: $color-primary;
+        font-weight: 600;
+      }
+
+      .box-container {
+        display: flex;
+        background-color: $color-white;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 12px;
+        border-radius: 28px;
+        box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
+        .box-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+
+          .text {
+            font-weight: 500;
+            &.sub {
+              color: $color-semi-secundary;
+            }
+          }
+        }
+        .box-bottom {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          hr {
+            width: 1280px;
+            background: $color-shadow-secundary;
+            border: none;
+            height: 1px;
+          }
+        }
+      }
     }
   }
 }
