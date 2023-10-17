@@ -8,6 +8,7 @@ import { MoneyUp } from "../../components/img/MoneyUp";
 import { Wallet } from "../../components/img/Wallet";
 import "./Dashboard.scss";
 import { Exchange } from "../../components/img/Exchange";
+import { Charts } from "../../components/Charts";
 const Dashboard = () => {
   return (
     <main className="dashboard">
@@ -72,7 +73,9 @@ const Dashboard = () => {
         <div className="content chart">
           <h3>Gráfico de movimentações</h3>
           <div className="box-container">
-            <div className="box-content"></div>
+            <div className="box-content">
+              <Charts />
+            </div>
           </div>
         </div>
       </div>

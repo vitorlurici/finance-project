@@ -88,9 +88,7 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
             </Link>
             da Finance.
           </span>
-          <Link to="/dashboard">
-            <button type="submit">CONCORDAR E CADASTRAR</button>
-          </Link>
+          <button type="submit">CONCORDAR E CADASTRAR</button>
         </form>
         <form className={`${activeButton === 1 ? "login" : "hidden login"}`}>
           <div className="float-label">
