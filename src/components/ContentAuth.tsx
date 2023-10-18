@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { useForm, SubmitHandler, Resolver } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { date, object, string } from "yup";
 
@@ -18,11 +18,9 @@ const schema = object({
 
 const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
   const [email, setEmail] = useState("");
-  // const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
   const {
     register,
-    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
@@ -31,9 +29,7 @@ const ContentAuth = ({ activeButton }: { activeButton: number | null }) => {
 
   const [show, setShow] = useState(false);
 
-  //resetar os dados do usuário ao trocar de form entrar/cadastrar
   // useEffect(() => {
-  //   setNome("");
   //   setEmail("");
   //   setSenha("");
   // }, [activeButton]);

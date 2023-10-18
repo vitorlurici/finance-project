@@ -9,15 +9,38 @@ import { Wallet } from "../../components/img/Wallet";
 import "./Dashboard.scss";
 import { Exchange } from "../../components/img/Exchange";
 import { Charts } from "../../components/Charts";
+import { useEffect, useState } from "react";
+import ConfigModal from "../../components/ConfigModal";
+import AddModal from "../../components/AddModal";
+
 const Dashboard = () => {
+  const [openConfig, setOpenConfig] = useState(false);
+  const [openAdd, setOpenAdd] = useState(false);
+
+  const handleOutsideClick = () => {
+    setOpenConfig(false);
+    setOpenAdd(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      window.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <main className="dashboard">
       <div className="top-bar">
-        <button className="btn-user-config">
+        <button
+          className="btn-user-config"
+          onClick={() => setOpenConfig(!openConfig)}
+        >
           <DashboardUser />
           Seu nome
           <DownArrowUser />
         </button>
+        {openConfig && <ConfigModal isOpen={openConfig} />}
       </div>
       <button className="btn-month">
         mês
@@ -26,10 +49,11 @@ const Dashboard = () => {
       <div className="container">
         <h2>Painel</h2>
         <div className="info-content">
-          <button className="btn-add">
+          <button className="btn-add" onClick={() => setOpenAdd(!openAdd)}>
             <AddIcon />
             <DownArrow />
           </button>
+          {openAdd && <AddModal isOpen={openAdd} />}
           <button className="btn">
             <div className="info-btn">
               <h4 className="name">Saldo atual</h4>
@@ -82,5 +106,4 @@ const Dashboard = () => {
     </main>
   );
 };
-
 export default Dashboard;
