@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { BlurLogo } from "./img/BlurLogo";
-import { LoginIcon } from "./img/LoginIcon";
+import { BlurLogo } from "./svg/BlurLogo";
+import { LoginIcon } from "./svg/LoginIcon";
 import ScrollTop from "./ScrollTop";
 
 const TopBar = () => {

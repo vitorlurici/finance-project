@@ -1,4 +1,4 @@
-import { Error } from "../../components/img/Error";
+import { Error } from "../../components/svg/Error";
 import "./children.scss";
 const ErrorPage = () => {
   return (

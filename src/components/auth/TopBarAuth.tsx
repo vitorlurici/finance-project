@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BlurLogo } from "./img/BlurLogo";
+import { BlurLogo } from "../svg/BlurLogo";
 
 const TopBarAuth = () => {
   return (

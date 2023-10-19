@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WhiteLogo } from "./img/WhiteLogo";
+import { WhiteLogo } from "./svg/WhiteLogo";
 import ScrollTop from "./ScrollTop";
 
 const BottomBar = () => {

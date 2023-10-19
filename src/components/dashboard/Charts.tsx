@@ -2,8 +2,8 @@ import { Chart } from "react-google-charts";
 
 export const data = [
   ["Dia", "Receitas", "Despesas"],
-  [1, 37.8, 80.8],
-  [2, 30.9, 69.5],
+  [1, 132, 80.8],
+  [2, 127, 0],
   [3, 25.4, 57],
   [4, 11.7, 18.8],
   [5, 11.9, 17.6],

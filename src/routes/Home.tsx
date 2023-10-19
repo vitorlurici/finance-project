@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { FlagIcon } from "../components/img/FlagIcon";
-import { GraphicIcon } from "../components/img/GraphicIcon";
-import { MoneyHand } from "../components/img/MoneyHand";
+import { FlagIcon } from "../components/svg/FlagIcon";
+import { GraphicIcon } from "../components/svg/GraphicIcon";
+import { MoneyHand } from "../components/svg/MoneyHand";
 
 const Home = () => {
   return (

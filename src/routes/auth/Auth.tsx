@@ -1,8 +1,8 @@
 import "./Auth.scss";
-import TopBarAuth from "../../components/TopBarAuth";
-import { AuthPerson } from "../../components/img/AuthPerson";
-import LoginRegisterButtonSwap from "../../components/LoginRegisterButtonSwap";
-import ContentAuth from "../../components/ContentAuth";
+import TopBarAuth from "../../components/auth/TopBarAuth";
+import { AuthPerson } from "../../components/svg/AuthPerson";
+import LoginRegisterButtonSwap from "../../components/auth/LoginRegisterButtonSwap";
+import ContentAuth from "../../components/auth/ContentAuth";
 import { useState } from "react";
 
 const Auth = () => {

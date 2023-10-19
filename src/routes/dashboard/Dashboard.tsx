@@ -1,23 +1,38 @@
-import { Link } from "react-router-dom";
-import { AddIcon } from "../../components/img/AddIcon";
-import { DashboardUser } from "../../components/img/DashboardUser";
-import { DownArrow } from "../../components/img/DownArrow";
-import { DownArrowUser } from "../../components/img/DownArrowUser";
-import { MoneyDown } from "../../components/img/MoneyDown";
-import { MoneyUp } from "../../components/img/MoneyUp";
-import { Wallet } from "../../components/img/Wallet";
+import { AddIcon } from "../../components/svg/AddIcon";
+import { DashboardUser } from "../../components/svg/DashboardUser";
+import { DownArrow } from "../../components/svg/DownArrow";
+import { DownArrowUser } from "../../components/svg/DownArrowUser";
+import { MoneyDown } from "../../components/svg/MoneyDown";
+import { MoneyUp } from "../../components/svg/MoneyUp";
+import { Wallet } from "../../components/svg/Wallet";
 import "./Dashboard.scss";
-import { Exchange } from "../../components/img/Exchange";
-import { Charts } from "../../components/Charts";
 import { useEffect, useState } from "react";
-import ConfigModal from "../../components/ConfigModal";
-import AddModal from "../../components/AddModal";
+import ConfigModal from "../../components/dashboard/ConfigModal";
+import AddModal from "../../components/dashboard/AddModal";
+import TransactionsHistory from "../../components/dashboard/TransactionsHistory";
+import TransactionsChart from "../../components/dashboard/TransactionsChart";
 
 const Dashboard = () => {
   const [openConfig, setOpenConfig] = useState(false);
   const [openAdd, setOpenAdd] = useState(false);
 
-  const handleOutsideClick = () => {
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (e.target instanceof Node) {
+      if (
+        openConfig &&
+        document.getElementById("configModal") &&
+        document.getElementById("configModal")!.contains(e.target)
+      ) {
+        return;
+      }
+      if (
+        openAdd &&
+        document.getElementById("addModal") &&
+        document.getElementById("addModal")!.contains(e.target)
+      ) {
+        return;
+      }
+    }
     setOpenConfig(false);
     setOpenAdd(false);
   };
@@ -27,20 +42,27 @@ const Dashboard = () => {
     return () => {
       window.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, []);
+  }, [openConfig, openAdd]);
+
+  const toggleConfigModal = () => {
+    setOpenConfig(!openConfig);
+  };
+
+  const toggleAddModal = () => {
+    setOpenAdd(!openAdd);
+  };
 
   return (
     <main className="dashboard">
       <div className="top-bar">
-        <button
-          className="btn-user-config"
-          onClick={() => setOpenConfig(!openConfig)}
-        >
+        <button className="btn-user-config" onClick={toggleConfigModal}>
           <DashboardUser />
           Seu nome
           <DownArrowUser />
         </button>
-        {openConfig && <ConfigModal isOpen={openConfig} />}
+        <div id="configModal">
+          {openConfig && <ConfigModal isOpen={openConfig} />}
+        </div>
       </div>
       <button className="btn-month">
         mês
@@ -49,11 +71,11 @@ const Dashboard = () => {
       <div className="container">
         <h2>Painel</h2>
         <div className="info-content">
-          <button className="btn-add" onClick={() => setOpenAdd(!openAdd)}>
+          <button className="btn-add" onClick={toggleAddModal}>
             <AddIcon />
             <DownArrow />
           </button>
-          {openAdd && <AddModal isOpen={openAdd} />}
+          <div id="addModal">{openAdd && <AddModal isOpen={openAdd} />}</div>
           <button className="btn">
             <div className="info-btn">
               <h4 className="name">Saldo atual</h4>
@@ -76,32 +98,8 @@ const Dashboard = () => {
             <MoneyDown />
           </button>
         </div>
-        <div className="content records">
-          <h3>Histórico de movimentações</h3>
-          <div className="box-container">
-            <div className="box-content">
-              <Exchange />
-              <h4 className="text main">
-                Você ainda não possui transações cadastradas.
-              </h4>
-              <h4 className="text sub">
-                Que tal começar adicionando suas receitas e despesas do mês?
-              </h4>
-            </div>
-            <div className="box-bottom">
-              <hr></hr>
-              <Link to={"/dashboard"}>VER MAIS</Link>
-            </div>
-          </div>
-        </div>
-        <div className="content chart">
-          <h3>Gráfico de movimentações</h3>
-          <div className="box-container">
-            <div className="box-content">
-              <Charts />
-            </div>
-          </div>
-        </div>
+        <TransactionsHistory />
+        <TransactionsChart />
       </div>
     </main>
   );
