@@ -11,7 +11,9 @@ import AboutUs from "./routes/children/AboutUs.tsx";
 import TermsPrivacity from "./routes/children/TermsPrivacity.tsx";
 import ErrorPage from "./routes/children/ErrorPage.tsx";
 import Auth from "./routes/auth/Auth.tsx";
-import Dashboard from "./routes/dashboard/Dashboard.tsx";
+import Dashboard from "./routes/dashboard/pages/Dashboard.tsx";
+import Main from "./routes/dashboard/Main.tsx";
+import Transactions from "./routes/dashboard/pages/Transactions";
 
 const Private: React.FC<{ Item: React.ComponentType; title: string }> = ({
   Item,
@@ -107,12 +109,32 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "dashboard",
+    path: "",
     element: (
       <>
-        <Private Item={Dashboard} title="Dashboard - Finance" />
+        <Private Item={Main} title="Dashboard - Finance" />
       </>
     ),
+    children: [
+      {
+        path: "dashboard",
+        element: (
+          <>
+            <TitleUpdater title="Dashboard - Finance" />
+            <Dashboard />
+          </>
+        ),
+      },
+      {
+        path: "historico-movimentacoes",
+        element: (
+          <>
+            <TitleUpdater title="Historico de movimentações - Finance" />
+            <Transactions />
+          </>
+        ),
+      },
+    ],
   },
 ]);
 

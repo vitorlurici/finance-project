@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Exchange } from "../svg/Exchange";
 
 const TransactionsHistory = () => {
+  const location = useLocation();
   return (
     <div className="content transactions">
       <h3>Histórico de movimentações</h3>
@@ -15,12 +16,14 @@ const TransactionsHistory = () => {
             Que tal começar adicionando suas receitas e despesas do mês?
           </h4>
         </div>
-        <Link to={"/historico-movimentacoes"}>
-          <div className="box-bottom">
-            <hr></hr>
-            VER MAIS
-          </div>
-        </Link>
+        {location.pathname !== "/historico-movimentacoes" && (
+          <Link to="/historico-movimentacoes">
+            <div className="box-bottom">
+              <hr></hr>
+              VER MAIS
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   );
