@@ -15,10 +15,12 @@ const TransactionsHistory = () => {
             Que tal começar adicionando suas receitas e despesas do mês?
           </h4>
         </div>
-        <div className="box-bottom">
-          <hr></hr>
-          <Link to={"/dashboard"}>VER MAIS</Link>
-        </div>
+        <Link to={"/historico-movimentacoes"}>
+          <div className="box-bottom">
+            <hr></hr>
+            VER MAIS
+          </div>
+        </Link>
       </div>
     </div>
   );

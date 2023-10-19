@@ -11,10 +11,12 @@ import ConfigModal from "../../components/dashboard/ConfigModal";
 import AddModal from "../../components/dashboard/AddModal";
 import TransactionsHistory from "../../components/dashboard/TransactionsHistory";
 import TransactionsChart from "../../components/dashboard/TransactionsChart";
+import MonthModal from "../../components/dashboard/MonthModal";
 
 const Dashboard = () => {
   const [openConfig, setOpenConfig] = useState(false);
   const [openAdd, setOpenAdd] = useState(false);
+  const [openMonth, setOpenMonth] = useState(false);
 
   const handleOutsideClick = (e: MouseEvent) => {
     if (e.target instanceof Node) {
@@ -32,9 +34,17 @@ const Dashboard = () => {
       ) {
         return;
       }
+      if (
+        openAdd &&
+        document.getElementById("monthModal") &&
+        document.getElementById("monthModal")!.contains(e.target)
+      ) {
+        return;
+      }
     }
     setOpenConfig(false);
     setOpenAdd(false);
+    setOpenMonth(false);
   };
 
   useEffect(() => {
@@ -42,7 +52,7 @@ const Dashboard = () => {
     return () => {
       window.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [openConfig, openAdd]);
+  }, [openConfig, openAdd, openMonth]);
 
   const toggleConfigModal = () => {
     setOpenConfig(!openConfig);
@@ -52,6 +62,9 @@ const Dashboard = () => {
     setOpenAdd(!openAdd);
   };
 
+  const toggleMonthModal = () => {
+    setOpenMonth(!openMonth);
+  };
   return (
     <main className="dashboard">
       <div className="top-bar">
@@ -64,10 +77,13 @@ const Dashboard = () => {
           {openConfig && <ConfigModal isOpen={openConfig} />}
         </div>
       </div>
-      <button className="btn-month">
+      <button className="btn-month" onClick={toggleMonthModal}>
         mês
         <DownArrow />
       </button>
+      <div id="monthModal">
+        {openMonth && <MonthModal isOpen={openMonth} />}
+      </div>
       <div className="container">
         <h2>Painel</h2>
         <div className="info-content">
