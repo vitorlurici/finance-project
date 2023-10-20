@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   padding-bottom: 40px;
 
   button {
@@ -28,11 +28,18 @@
     align-items: center;
     justify-content: space-between;
 
+    .top-bar-right {
+      position: relative;
+    }
     .btn-user-config {
       gap: 24px;
       background: transparent;
       cursor: pointer;
     }
+  }
+
+  .month-controller {
+    position: relative;
   }
 
   .btn-month {
@@ -56,6 +63,16 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+
+      div {
+        .addModal {
+          position: absolute;
+        }
+      }
+
+      .add-controller {
+        position: relative;
+      }
 
       .btn-add {
         height: 100px;

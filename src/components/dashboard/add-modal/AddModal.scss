@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.add-modal {
+  position: absolute;
+  top: 0%;
+  width: 220px;
+  height: 300px;
+  background-color: $color-white;
+}

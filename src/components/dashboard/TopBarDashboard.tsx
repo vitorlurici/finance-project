@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DashboardUser } from "../svg/DashboardUser";
 import { DownArrowUser } from "../svg/DownArrowUser";
-import ConfigModal from "./ConfigModal";
+import ConfigModal from "./config-modal/ConfigModal";
 import { BlurLogo } from "../svg/BlurLogo";
 import { Link } from "react-router-dom";
 import ScrollTop from "../ScrollTop";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import AddModal from "../../../components/dashboard/AddModal";
-import MonthModal from "../../../components/dashboard/MonthModal";
+import AddModal from "../../../components/dashboard/add-modal/AddModal";
+import MonthModal from "../../../components/dashboard/month-modal/MonthModal";
 import TransactionsChart from "../../../components/dashboard/TransactionsChart";
 import TransactionsHistory from "../../../components/dashboard/TransactionsHistory";
 import { AddIcon } from "../../../components/svg/AddIcon";
@@ -23,7 +23,7 @@ const Dashboard = () => {
         return;
       }
       if (
-        openAdd &&
+        openMonth &&
         document.getElementById("monthModal") &&
         document.getElementById("monthModal")!.contains(e.target)
       ) {
@@ -50,21 +50,25 @@ const Dashboard = () => {
   };
   return (
     <>
-      <button className="btn-month" onClick={toggleMonthModal}>
-        mês
-        <DownArrow />
-      </button>
-      <div id="monthModal">
-        {openMonth && <MonthModal isOpen={openMonth} />}
+      <div className="month-controller">
+        <button className="btn-month" onClick={toggleMonthModal}>
+          mês
+          <DownArrow />
+        </button>
+        <div id="monthModal">
+          {openMonth && <MonthModal isOpen={openMonth} />}
+        </div>
       </div>
       <div className="container">
         <h2>Painel</h2>
         <div className="info-content">
-          <button className="btn-add" onClick={toggleAddModal}>
-            <AddIcon />
-            <DownArrow />
-          </button>
-          <div id="addModal">{openAdd && <AddModal isOpen={openAdd} />}</div>
+          <div className="add-controller">
+            <button className="btn-add" onClick={toggleAddModal}>
+              <AddIcon />
+              <DownArrow />
+            </button>
+            <div id="addModal">{openAdd && <AddModal isOpen={openAdd} />}</div>
+          </div>
           <button className="btn">
             <div className="info-btn">
               <h4 className="name">Saldo atual</h4>

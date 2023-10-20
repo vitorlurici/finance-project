@@ -1,10 +1,12 @@
+import "./ConfigModal.scss";
+
 type ConfigModalProps = {
   isOpen: boolean;
 };
 
 const ConfigModal = ({ isOpen }: ConfigModalProps) => {
   if (isOpen) {
-    return <div>ConfigModal</div>;
+    return <main className="config-modal">test</main>;
   }
 
   return null;

@@ -1,10 +1,12 @@
+import "./MonthModal.scss";
+
 type MonthModalProps = {
   isOpen: boolean;
 };
 
 const MonthModal = ({ isOpen }: MonthModalProps) => {
   if (isOpen) {
-    return <div>MonthModal</div>;
+    return <main className="month-modal">teste</main>;
   }
 
   return null;
