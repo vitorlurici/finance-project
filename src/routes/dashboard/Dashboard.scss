@@ -35,6 +35,14 @@
       gap: 24px;
       background: transparent;
       cursor: pointer;
+      padding: 4px;
+      transition: 0.5s;
+
+      &:hover {
+        transition: 0.5s;
+        background: $color-low-secundary;
+        border-radius: 28px;
+      }
     }
   }
 
@@ -49,6 +57,13 @@
     background-color: transparent;
     border: 1px solid $color-semi-secundary;
     cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      transition: 0.5s;
+      background: $color-low-secundary;
+      border-radius: 28px;
+    }
   }
 
   .container {
@@ -83,6 +98,13 @@
         justify-content: space-between;
         background-color: $color-primary;
         width: 200px;
+        transition: 0.5s;
+
+        &:hover {
+          transition: 0.5s;
+          background: $color-darker;
+          border-radius: 28px;
+        }
       }
 
       .btn {

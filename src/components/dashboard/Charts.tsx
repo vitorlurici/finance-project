@@ -25,7 +25,7 @@ export const options = {
     1: { curveType: "Function" },
   },
 
-  colors: ["#5093FF", "#db1b1b"],
+  colors: ["#59BCE7", "#E75959"],
 };
 
 export function Charts() {

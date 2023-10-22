@@ -154,8 +154,10 @@
             -webkit-appearance: none;
             outline: none;
             cursor: pointer;
+            transition: 0.2s;
 
             &:checked {
+              transition: 0.2s;
               background-color: $color-primary;
             }
           }
@@ -179,9 +181,11 @@
           font-weight: 400;
           color: $color-white;
           cursor: pointer;
+          transition: 0.4s;
 
           &:hover {
             background-color: $color-darker;
+            transition: 0.4s;
           }
         }
         &.hidden {

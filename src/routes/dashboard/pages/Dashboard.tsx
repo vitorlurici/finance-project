@@ -8,13 +8,14 @@ import { DownArrow } from "../../../components/svg/DownArrow";
 import { MoneyDown } from "../../../components/svg/MoneyDown";
 import { MoneyUp } from "../../../components/svg/MoneyUp";
 import { Wallet } from "../../../components/svg/Wallet";
+import { RightArrow } from "../../../components/svg/RightArrow";
 
 const Dashboard = () => {
   const [openAdd, setOpenAdd] = useState(false);
   const [openMonth, setOpenMonth] = useState(false);
 
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (e.target instanceof Node) {
+  const handleOutsideClick = (e: any) => {
+    if (e.target) {
       if (
         openAdd &&
         document.getElementById("addModal") &&
@@ -65,9 +66,9 @@ const Dashboard = () => {
           <div className="add-controller">
             <button className="btn-add" onClick={toggleAddModal}>
               <AddIcon />
-              <DownArrow />
+              <RightArrow />
             </button>
-            <div id="addModal">{openAdd && <AddModal isOpen={openAdd} />}</div>
+            <div id="addModal">{<AddModal isOpen={openAdd} />}</div>
           </div>
           <button className="btn">
             <div className="info-btn">

@@ -14,6 +14,7 @@ import Auth from "./routes/auth/Auth.tsx";
 import Dashboard from "./routes/dashboard/pages/Dashboard.tsx";
 import Main from "./routes/dashboard/Main.tsx";
 import Transactions from "./routes/dashboard/pages/Transactions";
+import Config from "./routes/dashboard/pages/Config.tsx";
 
 const Private: React.FC<{ Item: React.ComponentType; title: string }> = ({
   Item,
@@ -131,6 +132,15 @@ const router = createBrowserRouter([
           <>
             <TitleUpdater title="Historico de movimentações - Finance" />
             <Transactions />
+          </>
+        ),
+      },
+      {
+        path: "config",
+        element: (
+          <>
+            <TitleUpdater title="Configurações - Finance" />
+            <Config />
           </>
         ),
       },

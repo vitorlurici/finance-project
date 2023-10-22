@@ -1,9 +1,47 @@
 @import "../../../styles/variables.scss";
 
 .config-modal {
+  margin-top: 80px;
   position: absolute;
+  width: 214.6px;
   top: 0%;
-  width: 220px;
-  height: 300px;
+  justify-content: center;
   background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  align-items: start;
+  border-radius: 24px;
+  box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
+  transition: opacity 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  button {
+    width: 214.6px;
+    padding: 8px 28px;
+    color: $color-semi-secundary;
+    gap: 12px;
+    transition: 0.3s;
+    &.config {
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+
+    &.exit {
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+
+    &:hover {
+      transition: 0.3s;
+      background-color: $color-low-secundary;
+    }
+  }
 }

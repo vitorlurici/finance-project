@@ -6,7 +6,7 @@ type MonthModalProps = {
 
 const MonthModal = ({ isOpen }: MonthModalProps) => {
   if (isOpen) {
-    return <main className="month-modal">teste</main>;
+    return <main className="month-modal"></main>;
   }
 
   return null;

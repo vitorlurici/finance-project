@@ -9,13 +9,9 @@ import ScrollTop from "../ScrollTop";
 const TopBarDashboard = () => {
   const [openConfig, setOpenConfig] = useState(false);
 
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (e.target instanceof Node) {
-      if (
-        openConfig &&
-        document.getElementById("configModal") &&
-        document.getElementById("configModal")!.contains(e.target)
-      ) {
+  const handleOutsideClick = (e: any) => {
+    if (e.target) {
+      if (document.getElementById("configModal")!.contains(e.target)) {
         return;
       }
     }
@@ -41,14 +37,16 @@ const TopBarDashboard = () => {
         </Link>
       </div>
       <div className="top-bar-right">
-        <button className="btn-user-config" onClick={toggleConfigModal}>
+        <button
+          id="user"
+          className="btn-user-config"
+          onClick={toggleConfigModal}
+        >
           <DashboardUser />
           Seu nome
           <DownArrowUser />
         </button>
-        <div id="configModal">
-          {openConfig && <ConfigModal isOpen={openConfig} />}
-        </div>
+        <div id="configModal">{<ConfigModal isOpen={openConfig} />}</div>
       </div>
     </div>
   );
