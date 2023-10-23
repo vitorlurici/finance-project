@@ -1,10 +1,107 @@
 @import "../../../styles/variables.scss";
 
-.month-modal {
-  left: 0%;
-  top: 0%;
-  width: 300px;
-  height: 300px;
-  background-color: $color-white;
-  position: absolute;
+.month-picker {
+  .btn-month {
+    padding: 8px 28px;
+    gap: 20px;
+    border-radius: 48px;
+    background-color: transparent;
+    border: 1px solid $color-semi-secundary;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 224px;
+    justify-content: center;
+    position: relative;
+
+    &:hover {
+      transition: 0.5s;
+      background: $color-low-secundary;
+      border-radius: 28px;
+    }
+  }
+
+  .datepicker-popup {
+    top: 120%;
+    position: absolute;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px $color-shadow-secundary;
+    font-weight: 500;
+
+    .year-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: $color-primary;
+      color: $color-white;
+      width: 100%;
+      padding: 12px;
+      border-top-right-radius: 24px;
+      border-top-left-radius: 24px;
+
+      .btn-next-prev {
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.4s;
+        padding: 12px;
+
+        &:hover {
+          background-color: $color-shadow-secundary;
+          border-radius: 100%;
+          transition: 0.4s;
+        }
+      }
+
+      .select-year {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-white;
+        cursor: pointer;
+        transition: 0.4s;
+        padding: 8px;
+
+        &:hover {
+          background-color: $color-shadow-secundary;
+          border-radius: 20px;
+          transition: 0.4s;
+        }
+
+        option {
+          background-color: $color-primary;
+          cursor: pointer;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 8px;
+      justify-content: center;
+      li {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 4px 12px;
+        flex-basis: calc(33.33%);
+        color: $color-semi-secundary;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover {
+          background-color: $color-low-secundary;
+          border-radius: 8px;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
 }

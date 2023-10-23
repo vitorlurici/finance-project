@@ -1,5 +1,11 @@
 @import "../../styles/variables.scss";
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .dashboard {
   background-color: $color-grey-background;
   min-height: 100vh;
@@ -48,22 +54,6 @@
 
   .month-controller {
     position: relative;
-  }
-
-  .btn-month {
-    padding: 8px 28px;
-    gap: 20px;
-    border-radius: 48px;
-    background-color: transparent;
-    border: 1px solid $color-semi-secundary;
-    cursor: pointer;
-    transition: 0.5s;
-
-    &:hover {
-      transition: 0.5s;
-      background: $color-low-secundary;
-      border-radius: 28px;
-    }
   }
 
   .container {

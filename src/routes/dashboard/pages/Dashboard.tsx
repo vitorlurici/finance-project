@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import AddModal from "../../../components/dashboard/add-modal/AddModal";
-import MonthModal from "../../../components/dashboard/month-modal/MonthModal";
 import TransactionsChart from "../../../components/dashboard/TransactionsChart";
 import TransactionsHistory from "../../../components/dashboard/TransactionsHistory";
 import { AddIcon } from "../../../components/svg/AddIcon";
-import { DownArrow } from "../../../components/svg/DownArrow";
+
 import { MoneyDown } from "../../../components/svg/MoneyDown";
 import { MoneyUp } from "../../../components/svg/MoneyUp";
 import { Wallet } from "../../../components/svg/Wallet";
 import { RightArrow } from "../../../components/svg/RightArrow";
+import MonthDatePicker from "../../../components/dashboard/month-modal/MonthDatePicker";
 
 const Dashboard = () => {
   const [openAdd, setOpenAdd] = useState(false);
-  const [openMonth, setOpenMonth] = useState(false);
 
   const handleOutsideClick = (e: any) => {
     if (e.target) {
@@ -23,16 +22,8 @@ const Dashboard = () => {
       ) {
         return;
       }
-      if (
-        openMonth &&
-        document.getElementById("monthModal") &&
-        document.getElementById("monthModal")!.contains(e.target)
-      ) {
-        return;
-      }
     }
     setOpenAdd(false);
-    setOpenMonth(false);
   };
 
   useEffect(() => {
@@ -40,25 +31,16 @@ const Dashboard = () => {
     return () => {
       window.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [openAdd, openMonth]);
+  }, [openAdd]);
 
   const toggleAddModal = () => {
     setOpenAdd(!openAdd);
   };
 
-  const toggleMonthModal = () => {
-    setOpenMonth(!openMonth);
-  };
   return (
     <>
       <div className="month-controller">
-        <button className="btn-month" onClick={toggleMonthModal}>
-          mês
-          <DownArrow />
-        </button>
-        <div id="monthModal">
-          {openMonth && <MonthModal isOpen={openMonth} />}
-        </div>
+        <MonthDatePicker />
       </div>
       <div className="container">
         <h2>Painel</h2>

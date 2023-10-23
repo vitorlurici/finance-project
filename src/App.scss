@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 @keyframes balance {
   0% {
     transform: rotate(-40deg);
