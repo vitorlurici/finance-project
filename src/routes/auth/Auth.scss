@@ -33,16 +33,15 @@
     width: 100%;
     align-items: start;
     justify-content: center;
-    gap: 108px;
 
     .left-content {
       display: flex;
       flex-direction: column;
-      width: 424px;
       justify-content: center;
       gap: 24px;
       color: $color-semi-secundary;
       overflow: hidden;
+      padding: 0px 108px;
 
       .top-login {
         display: flex;
@@ -90,7 +89,7 @@
           input {
             display: flex;
             min-width: 180px;
-            width: 452px;
+            width: 100%;
             padding: 8px 0px;
             padding-right: 20px;
             color: $color-secundary;
@@ -223,6 +222,36 @@
         line-height: 1;
         font-size: 28px;
       }
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .auth {
+    .content {
+      .left-content {
+        padding: 0px 40px;
+
+        form {
+          .float-label {
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .right-content {
+        padding: 0px 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .auth {
+    .content {
+      flex-direction: column;
     }
   }
 }

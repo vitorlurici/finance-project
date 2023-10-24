@@ -55,29 +55,10 @@
         }
       }
 
-      .select-year {
-        appearance: none;
+      .selected-year {
         background-color: transparent;
-        border: none;
-        outline: none;
-        font-family: "Montserrat", sans-serif;
-        font-size: 16px;
         font-weight: 600;
-        color: $color-white;
-        cursor: pointer;
-        transition: 0.4s;
         padding: 8px;
-
-        &:hover {
-          background-color: $color-shadow-secundary;
-          border-radius: 20px;
-          transition: 0.4s;
-        }
-
-        option {
-          background-color: $color-primary;
-          cursor: pointer;
-        }
       }
     }
 

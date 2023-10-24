@@ -96,17 +96,7 @@ const MonthDatePicker: React.FC = () => {
             >
               <PreviousYearIcon />
             </button>
-            <select
-              className="select-year"
-              value={anoSelecionado}
-              onChange={(e) => setAnoSelecionado(parseInt(e.target.value))}
-            >
-              {anosDisponiveis.map((ano) => (
-                <option key={ano} value={ano}>
-                  {ano}
-                </option>
-              ))}
-            </select>
+            <div className="selected-year">{anoSelecionado}</div>
             <button
               className="btn-next-prev"
               onClick={() => handleYearChange(1)}
