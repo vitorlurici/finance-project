@@ -1,4 +1,4 @@
-import "./children.scss";
+import "./Children.scss";
 const Contact = () => {
   return <main className="children-main"></main>;
 };

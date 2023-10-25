@@ -1,5 +1,5 @@
 import { Error } from "../../components/svg/Error";
-import "./children.scss";
+import "./Children.scss";
 const ErrorPage = () => {
   return (
     <main className="children-main">
