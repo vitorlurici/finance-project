@@ -173,3 +173,36 @@
     }
   }
 }
+
+@media (max-width: 1400px) {
+  .dashboard {
+    .top-bar {
+      width: 100%;
+      padding: 0px 60px;
+    }
+
+    .container {
+      width: 100%;
+      padding: 0px 60px;
+
+      .info-content {
+        .btn-add {
+          width: 160px;
+        }
+        .btn {
+          width: 260px;
+        }
+      }
+
+      .content {
+        .box-container {
+          .box-bottom {
+            hr {
+              width: 600px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
