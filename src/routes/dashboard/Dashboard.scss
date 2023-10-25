@@ -61,7 +61,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
-    width: 1280px;
+    max-width: 1280px;
 
     .info-content {
       display: flex;
@@ -149,6 +149,8 @@
           flex-direction: column;
           align-items: center;
           gap: 12px;
+          width: 100%;
+          max-width: 1220px;
 
           .text {
             font-weight: 500;
@@ -182,7 +184,6 @@
     }
 
     .container {
-      width: 100%;
       padding: 0px 60px;
 
       .info-content {

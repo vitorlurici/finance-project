@@ -1,4 +1,5 @@
 import { Chart } from "react-google-charts";
+import { useMediaQuery } from "react-responsive";
 
 export const data = [
   ["Dia", "Receitas", "Despesas"],
@@ -29,14 +30,18 @@ export const options = {
 };
 
 export function Charts() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
-    <Chart
-      chartType="LineChart"
-      width="1220px"
-      height="400px"
-      font-family="Montserrat"
-      data={data}
-      options={options}
-    />
+    <div className="chart-container">
+      <Chart
+        chartType="LineChart"
+        width={isMobile ? "100%" : "800px"}
+        height="400px"
+        font-family="Montserrat"
+        data={data}
+        options={options}
+      />
+    </div>
   );
 }
