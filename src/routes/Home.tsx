@@ -20,7 +20,7 @@ const Home = () => {
         <div className="right-content">
           <div className="emoji money">💸</div>
           <div className="emoji fire">🔥</div>
-          <img src="src/img/person-smartphone.png" width={278} />
+          <img src="./src/img/person-smartphone.png" width={278} />
           <div className="emoji face">🤑</div>
           <div className="emoji rocket">🚀</div>
         </div>
